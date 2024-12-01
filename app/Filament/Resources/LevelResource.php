@@ -19,6 +19,8 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Actions\ActionGroup;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
+use Filament\Tables\Columns\TextInputColumn;
+
 class LevelResource extends Resource
 {
     protected static ?string $model = Level::class;
@@ -86,8 +88,8 @@ class LevelResource extends Resource
                 TextColumn::make('order')
                     ->sortable()
                     ->label('Số đơn hàng'),
-                TextColumn::make('commission')
-                    ->sortable()
+                TextInputColumn::make('commission')
+                    ->rules(['required', 'numeric', 'max:100'])
                     ->label('Tỷ lệ hoa hồng'),
             ])
             ->filters([
