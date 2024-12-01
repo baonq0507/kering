@@ -85,10 +85,12 @@ class LevelResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->label('Tên cấp độ'),
-                TextColumn::make('min_balance')
+                TextInputColumn::make('min_balance')
+                    ->rules(['required', 'numeric'])
                     ->sortable()
                     ->label('Số dư tối thiểu'),
-                TextColumn::make('order')
+            TextInputColumn::make('order')
+                    ->rules(['required', 'numeric'])
                     ->sortable()
                     ->label('Số đơn hàng'),
                 TextInputColumn::make('commission')
