@@ -1,0 +1,8 @@
+header .logo img {
+    width: 10rem;
+    max-height: 11rem;
+}
+
+header {
+    padding: 0;
+}
