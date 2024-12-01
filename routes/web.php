@@ -42,4 +42,4 @@ Route::middleware(['lang'])->prefix('kering')->group(function () {
 Route::get('/product-category', [HomeController::class, 'productCategory'])->name('product.category');
 Route::get('/development', [HomeController::class, 'development'])->name('development');
 
-Route::get('/change-lang', [LangController::class, 'changeLang'])->name('changeLang');
+Route::get('/change-lang/{lang}', [LangController::class, 'changeLang'])->name('change.language');

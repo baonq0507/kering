@@ -7,11 +7,10 @@ use Illuminate\Http\Request;
 class LangController extends Controller
 {
     private $langActive = [
-        'vi',
+        'vn',
+        'fr',
+        'it',
         'en',
-        'ja',
-        'zh',
-        'ko',
     ];
     public function changeLang(Request $request)
     {
