@@ -398,7 +398,7 @@ video {
 
 @media (max-width: 768px) {
     .bgvid {
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #000000;
     }
 }

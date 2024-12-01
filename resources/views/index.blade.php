@@ -46,7 +46,7 @@
             <div class="row">
                 @foreach ($levels as $level)
                 <div class="col-12 col-lg-6">
-                    <div class="mission-card">
+                    <div class="mission-card mb-3">
                         <div class="mission-card-head">
                             <h3 class="mission-card-title">{{env('APP_NAME')}} @ {{$level->name}}</h3>
                             <span class="mission-card-percent">{{$level->commission}}%</span>
@@ -60,8 +60,7 @@
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
-                            <a @if(auth()->user()->level->id <= $level->id) href="{{route('order.index')}}" @else href="javascript:void(0)" @endif
-                                    class="btn btn-upgrade"
+                            <a @if(auth()->user()->level->id <= $level->id) href="{{route('order.index')}}" @else href="javascript:void(0)" @endif class="btn btn-upgrade"
                                     @if(auth()->user()->level->id < $level->id)
                                         data-toggle="modal" data-target="#modal-{{$level->id}}"
                                         @endif
@@ -75,22 +74,20 @@
                 </div>
                 @endforeach
             </div>
-            <div class="mission-link">
-                <a target="_blank" href="https://wikipedia.org/wiki/Kering" class="btn-link">
-                    <span>{{__('mess.about_us')}}</span><i class="fal fa-chevron-right"></i>
-                </a>
-                <a href="{{route('level.index')}}" class="btn-link">
-                    <span>{{__('mess.members_description')}}</span><i class="fal fa-chevron-right"></i>
-                </a>
-                <a href="{{route('development')}}" class="btn-link">
-                    <span>{{__('mess.oriented_development')}}</span><i class="fal fa-chevron-right"></i>
-                </a>
-                <a href="{{route('product.category')}}" class="btn-link">
-                    <span>{{__('mess.product_category')}}</span><i class="fal fa-chevron-right"></i>
-                </a>
-            </div>
-            <br>
-            <div class="text-center"></div>
+        </div>
+        <div class="mission-link">
+            <a target="_blank" href="https://wikipedia.org/wiki/Kering" class="btn-link">
+                <span>{{__('mess.about_us')}}</span><i class="fal fa-chevron-right"></i>
+            </a>
+            <a href="{{route('level.index')}}" class="btn-link">
+                <span>{{__('mess.members_description')}}</span><i class="fal fa-chevron-right"></i>
+            </a>
+            <a href="{{route('development')}}" class="btn-link">
+                <span>{{__('mess.oriented_development')}}</span><i class="fal fa-chevron-right"></i>
+            </a>
+            <a href="{{route('product.category')}}" class="btn-link">
+                <span>{{__('mess.product_category')}}</span><i class="fal fa-chevron-right"></i>
+            </a>
         </div>
     </section>
 </main>
