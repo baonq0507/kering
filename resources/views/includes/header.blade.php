@@ -12,7 +12,7 @@
                 </div>
             </a>
             <a href="/" title="Home" class="logo"><img
-                    src="https://www.pngfind.com/pngs/m/101-1015316_gucci-logo-vector-clipart-vector-design-kering-group.png" alt="" /></a>
+                    src="/staticindex/storage/setting/dcmlogo.png" alt="" /></a>
             <nav class="d-nav">
                 <ul style="display: flex;
                                 justify-content: space-between;
