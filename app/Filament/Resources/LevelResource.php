@@ -54,7 +54,7 @@ class LevelResource extends Resource
                         TextInput::make('commission')
                             ->required()
                             ->numeric()
-                            ->step(0.1)
+                            ->step(0.01)
                             ->prefix('%')
                             ->label('Tỷ lệ hoa hồng'),
                         TextInput::make('withdraw_per_day')
