@@ -99,7 +99,7 @@ class AuthController extends Controller
             $invite_code = str_pad(random_int(0, 999999), 6, '0', STR_PAD_LEFT);
         } while (User::where('invite_code', $invite_code)->exists());
 
-        $level = Level::where('name', 'Thành viên mới')->first();
+        $level = Level::where('id', 1)->first();
 
         User::create([
             'full_name' => $request->full_name,
