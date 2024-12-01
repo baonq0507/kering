@@ -38,7 +38,7 @@
         </div>
         <form action="{{ route('login') }}" id="login-form" class="form" method="post">
             @csrf
-            <div class="form-logo"><img src="/staticindex/storage/setting/dcmlogo.png" alt=""></div>
+            <div class="form-logo"><img src="/staticindex/storage/setting/dcmlogo.svg" alt=""></div>
             <div class="form-group">
                 <label>{{ __('mess.phone_number') }}</label>
                 <div class="form-box field-loginform-username">

@@ -20,7 +20,7 @@
         </div>
         <form id="signup-form" method="post" class="form">
             @csrf
-            <div class="form-logo"><img src="/staticindex/storage/setting/dcmlogo.png" alt=""></div>
+            <div class="form-logo"><img src="/staticindex/storage/setting/dcmlogo.svg" alt=""></div>
             <div class="form-group">
                 <label>{{ __('mess.username') }}</label>
                 <div class="form-box field-signupform-username">

@@ -50,7 +50,7 @@
                             <div class="headersp-btn_divider"></div>
                         </div>
                         <div class="headersp-btn-close"><i class="fa-solid fa-xmark" style="font-size: 28px; color: #fff"></i></div>
-                        <div class="headersp-logo"><img src="/staticindex/storage/setting/dcmlogo.png" alt="" /></div>
+                        <div class="headersp-logo"><img src="/staticindex/storage/setting/dcmlogo.svg" alt="" /></div>
                         <div class="headersp-search"><i class="fa fa-search" style="font-size: 24px; color: #fff"></i></div>
                     </div>
                 </div>
@@ -68,14 +68,14 @@
                                 <div>Accessibility</div>
                             </div>
                         </div>
-                        <div class="headerpc-logo"><img src="/staticindex/storage/setting/dcmlogo.png" alt="" /></div>
+                        <div class="headerpc-logo"><img src="/staticindex/storage/setting/dcmlogo.svg" alt="" /></div>
                     </div>
                 </div>
             </header>
             <header class="headerpc-sticky">
                 <div class="container">
                     <div class="headerpc-main">
-                        <div class="header-sticky_logo"><img src="/staticindex/storage/setting/dcmlogo.png" alt="" /></div>
+                        <div class="header-sticky_logo"><img src="/staticindex/storage/setting/dcmlogo.svg" alt="" /></div>
                         <div class="headerpc-nav">
                             <div class="headerpc-nav_item">Group</div>
                             <div class="headerpc-nav_item">Houses</div>
@@ -311,7 +311,7 @@
             <footer class="footer">
                 <div class="container">
                     <div class="footer-main">
-                        <div class="footer-img"><img src="/staticindex/storage/setting/dcmlogo.png" alt="" /></div>
+                        <div class="footer-img"><img src="/staticindex/storage/setting/dcmlogo.svg" alt="" /></div>
                         <div class="footer-box">
                             <div class="footer-box_item">
                                 <div class="footer-follow">Follow kering</div>

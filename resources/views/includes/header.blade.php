@@ -12,7 +12,7 @@
                 </div>
             </a>
             <a href="/" title="Home" class="logo"><img
-                    src="/staticindex/storage/setting/dcmlogo.png" alt="" /></a>
+                    src="/staticindex/storage/setting/dcmlogo.svg" alt="" /></a>
             <nav class="d-nav">
                 <ul style="display: flex;
                                 justify-content: space-between;
