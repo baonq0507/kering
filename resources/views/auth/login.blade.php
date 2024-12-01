@@ -48,7 +48,7 @@
                     name="login-button">{{ __('mess.login') }}</button>
             </div>
             <div class="form-link text-center">
-                <a>{{ __('mess.customer_service') }}</a>
+                <a class="cskh">{{ __('mess.customer_service') }}</a>
             </div>
             <div class="form-link text-center">
                 <span>{{ __('mess.dont_have_an_account') }}</span>

@@ -60,15 +60,15 @@
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
-                            <a href="javascript:void(0)"
-                                class="btn btn-upgrade"
-                                @if(auth()->user()->level->id < $level->id)
-                                data-toggle="modal" data-target="#modal-{{$level->id}}"
-                                @endif
-                                >
-                                <span class="">
-                                    {{ auth()->user()->level->id >= $level->id ? __('mess.active') : __('mess.unlock_level') }}
-                                </span>
+                            <a @if(auth()->user()->level->id <= $level->id) href="{{route('order.index')}}" @else href="javascript:void(0)" @endif
+                                    class="btn btn-upgrade"
+                                    @if(auth()->user()->level->id < $level->id)
+                                        data-toggle="modal" data-target="#modal-{{$level->id}}"
+                                        @endif
+                                        >
+                                        <span class="">
+                                            {{ auth()->user()->level->id >= $level->id ? __('mess.active') : __('mess.unlock_level') }}
+                                        </span>
                             </a>
                         </div>
                     </div>
