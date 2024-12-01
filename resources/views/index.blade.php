@@ -74,24 +74,21 @@
                 </div>
                 @endforeach
             </div>
-
+            <div class="mission-link">
+                <a target="_blank" href="https://wikipedia.org/wiki/Kering" class="btn-link">
+                    <span>{{__('mess.about_us')}}</span><i class="fal fa-chevron-right"></i>
+                </a>
+                <a href="{{route('level.index')}}" class="btn-link">
+                    <span>{{__('mess.members_description')}}</span><i class="fal fa-chevron-right"></i>
+                </a>
+                <a href="{{route('development')}}" class="btn-link">
+                    <span>{{__('mess.oriented_development')}}</span><i class="fal fa-chevron-right"></i>
+                </a>
+                <a href="{{route('product.category')}}" class="btn-link">
+                    <span>{{__('mess.product_category')}}</span><i class="fal fa-chevron-right"></i>
+                </a>
+            </div>
         </div>
-
-        <div class="mission-link container">
-            <a target="_blank" href="https://wikipedia.org/wiki/Kering" class="btn-link">
-                <span>{{__('mess.about_us')}}</span><i class="fal fa-chevron-right"></i>
-            </a>
-            <a href="{{route('level.index')}}" class="btn-link">
-                <span>{{__('mess.members_description')}}</span><i class="fal fa-chevron-right"></i>
-            </a>
-            <a href="{{route('development')}}" class="btn-link">
-                <span>{{__('mess.oriented_development')}}</span><i class="fal fa-chevron-right"></i>
-            </a>
-            <a href="{{route('product.category')}}" class="btn-link">
-                <span>{{__('mess.product_category')}}</span><i class="fal fa-chevron-right"></i>
-            </a>
-        </div>
-
     </section>
 </main>
 @foreach ($levels as $level)
