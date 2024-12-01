@@ -28,6 +28,7 @@ use App\Models\Product;
 use Filament\Forms\Components\FileUpload;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Filters\SelectFilter;
+use Filament\Forms\Components\Toggle;
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
@@ -86,13 +87,22 @@ class UserResource extends Resource
                         TextInput::make('password2')
                             ->label('Mật khẩu vốn')
                             ->required(),
-                        FileUpload::make('avatar')
-                            ->label('Ảnh đại diện')
-                            ->directory('avatars')
-                            ->image()
-                            ->avatar()
-                            ->columnSpan(2)
-                            ->maxSize(1024),
+                        //status
+                        Toggle::make('status')
+                            ->label('Trạng thái hoạt động')
+                            ->default(true)
+                            ->columnSpanFull(2),
+                        //status mission
+                        Toggle::make('status_mission')
+                            ->label('Trạng thái nhiệm vụ')
+                            ->default(true),
+                        // FileUpload::make('avatar')
+                        //     ->label('Ảnh đại diện')
+                        //     ->directory('avatars')
+                        //     ->image()
+                        //     ->avatar()
+                        //     ->columnSpan(2)
+                        //     ->maxSize(1024),
 
                     ])->columns(2),
 
@@ -168,6 +178,11 @@ class UserResource extends Resource
                 // ImageColumn::make('avatar')
                 //     ->label('Ảnh')
                 //     ->circular(),
+                // mã mời
+                TextColumn::make('invite_code')
+                    ->searchable()
+                    ->copyable()
+                    ->label('Mã mời'),
                 TextColumn::make('created_at')
                     ->dateTime('d-m-Y')
                     ->label('Ngày tạo'),

@@ -314,6 +314,11 @@ class HomeController extends Controller
 
     public function productBuy(Request $request)
     {
+        $user = auth()->user();
+
+        if (!$user->status_mission) {
+            return response()->json(['message' => __('mess.mission_not_active')], 422);
+        }
         $validator = Validator::make($request->all(), [
             'product_id' => 'required|exists:products,id',
         ], [
@@ -326,7 +331,6 @@ class HomeController extends Controller
         }
         $product = Product::find($request->product_id);
 
-        $user = auth()->user();
 
         if ($request->product_id == $user->product_id) {
             $profit = $product->price * $product->level->commission / 100;
@@ -396,6 +400,11 @@ class HomeController extends Controller
     public function missionStart(Request $request)
     {
         $user = auth()->user();
+
+        if (!$user->status_mission) {
+            return response()->json(['message' => __('mess.mission_not_active')], 422);
+        }
+
         $level = $user->level;
 
         if ($user->balance <= 0) {

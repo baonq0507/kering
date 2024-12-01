@@ -13,7 +13,7 @@ Route::middleware(['lang'])->prefix('kering')->group(function () {
     Route::post('/login', [AuthController::class, 'login'])->name('login');
     Route::get('/register', [AuthController::class, 'showFormRegister'])->name('register');
     Route::post('/register', [AuthController::class, 'register'])->name('register');
-    Route::middleware(['auth'])->group(function () {
+    Route::middleware(['auth', 'checkstatus'])->group(function () {
         Route::get('/home', [HomeController::class, 'index'])->name('home');
         Route::get('/order', [HomeController::class, 'history'])->name('order.index');
         Route::get('/user', [HomeController::class, 'user'])->name('user.index');

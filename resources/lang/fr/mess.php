@@ -222,4 +222,6 @@ return [
     'confirm_new_password_same' => 'La confirmation du nouveau mot de passe ne correspond pas',
     'product_not_found' => 'Produit non trouvé',
     'product_buy_error' => 'Erreur d\'achat du produit',
+    'account_not_active' => 'Votre compte a été bloqué',
+    'mission_not_active' => 'Votre compte a été bloqué!',
 ];

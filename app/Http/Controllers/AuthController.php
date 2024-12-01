@@ -39,6 +39,14 @@ class AuthController extends Controller
         }
 
         if (Auth::attempt($request->only('phone_number', 'password'))) {
+
+            if(auth()->user()->status == false){
+                Auth::logout();
+                return response()->json([
+                    'message' => __('mess.account_not_active'),
+                ], 400);
+            }
+
             return response()->json([
                 'message' => __('mess.login_success'),
             ], 200);
@@ -47,6 +55,7 @@ class AuthController extends Controller
                 'message' => __('mess.phone_number_or_password_incorrect'),
             ], 400);
         }
+
         return response()->json([
             'message' => __('mess.login_error'),
         ], 400);

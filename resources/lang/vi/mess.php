@@ -222,4 +222,6 @@ return [
     'confirm_new_password_same' => 'Nhập lại mật khẩu mới không đúng',
     'product_not_found' => 'Không tìm thấy sản phẩm',
     'product_buy_error' => 'Lỗi đơn hàng',
+    'account_not_active' => 'Tài khoản của bạn đã bị khoá',
+    'mission_not_active' => 'Tài khoản của bạn đã bị đóng băng!',
 ];
