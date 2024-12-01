@@ -78,7 +78,7 @@ class LevelResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id')
+                TextInputColumn::make('id')
                     ->sortable()
                     ->label('ID'),
                 TextColumn::make('name')
