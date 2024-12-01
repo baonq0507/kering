@@ -20,7 +20,7 @@
         </div>
         <form id="signup-form" method="post" class="form">
             @csrf
-            <div class="form-logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPmpu2hcdeMHRbu0xpjiIVTTCYcgd2nbNltA&s" alt=""></div>
+            <div class="form-logo"><img src="https://www.pngfind.com/pngs/m/101-1015316_gucci-logo-vector-clipart-vector-design-kering-group.png" alt=""></div>
             <div class="form-group">
                 <label>{{ __('mess.username') }}</label>
                 <div class="form-box field-signupform-username">
