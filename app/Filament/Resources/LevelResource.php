@@ -78,6 +78,9 @@ class LevelResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('id')
+                    ->sortable()
+                    ->label('ID'),
                 TextColumn::make('name')
                     ->searchable()
                     ->sortable()
