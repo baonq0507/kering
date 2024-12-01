@@ -261,7 +261,7 @@ select.form-control:not([size]):not([multiple]) {
 .mission-card,
 .mission-card-body,
 .mission-card-slide {
-    max-height: 100vw;
+    /* max-height: 100vw; */
 }
 img {
     max-width: 100%;
