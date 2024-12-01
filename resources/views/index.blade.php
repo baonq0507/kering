@@ -76,7 +76,7 @@
                 @endforeach
             </div>
             <div class="mission-link">
-                <a target="_blank" href="https://wikipedia.org/wiki/LVMH" class="btn-link">
+                <a target="_blank" href="https://wikipedia.org/wiki/Kering" class="btn-link">
                     <span>{{__('mess.about_us')}}</span><i class="fal fa-chevron-right"></i>
                 </a>
                 <a href="{{route('level.index')}}" class="btn-link">
