@@ -78,10 +78,10 @@ class LevelResource extends Resource
     {
         return $table
             ->columns([
-                TextInputColumn::make('id')
+                TextColumn::make('id')
                     ->sortable()
                     ->label('ID'),
-                TextColumn::make('name')
+                TextInputColumn::make('name')
                     ->searchable()
                     ->sortable()
                     ->label('Tên cấp độ'),
