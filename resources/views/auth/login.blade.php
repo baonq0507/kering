@@ -43,7 +43,7 @@
                 <label>{{ __('mess.phone_number') }}</label>
                 <div class="form-box field-loginform-username">
                     <i class="fal fa-user"></i>
-                    <input type="text" id="phone_number" name="phone_number" class="form-control"
+                    <input type="text" id="username" name="username" class="form-control"
                         placeholder="{{ __('mess.please_enter_user_name_or_mobile') }}" required>
                     <div class="invalid-feedback"></div>
                 </div>

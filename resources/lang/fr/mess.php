@@ -224,4 +224,6 @@ return [
     'product_buy_error' => 'Erreur d\'achat du produit',
     'account_not_active' => 'Votre compte a été bloqué',
     'mission_not_active' => 'Votre compte a été bloqué!',
+    'about_us' => 'À propos de nous',
+    'unlock_level' => 'Débloquer le niveau',
 ];

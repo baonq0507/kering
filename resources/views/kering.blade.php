@@ -68,7 +68,7 @@
                                 <div>Accessibility</div>
                             </div>
                         </div>
-                        <div class="headerpc-logo"><img src="/staticindex/storage/setting/dcmlogo.svg" alt="" /></div>
+                        <div class="headerpc-logo"><img  src="/staticindex/storage/setting/dcmlogo.svg" alt="" /></div>
                     </div>
                 </div>
             </header>

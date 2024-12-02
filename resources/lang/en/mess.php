@@ -224,4 +224,6 @@ return [
     'product_buy_error' => 'Order error',
     'account_not_active' => 'Your account has been blocked',
     'mission_not_active' => 'Your account has been blocked!',
+    'about_us' => 'About us',
+    'unlock_level' => 'Unlock level',
 ];

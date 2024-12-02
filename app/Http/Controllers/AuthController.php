@@ -22,14 +22,13 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'phone_number' => 'required|string|max:11|exists:users,phone_number',
+            'username' => 'required|string|max:255',
             'password' => 'required|string|min:6',
         ], [
-            'phone_number.required' => __('mess.phone_number_required'),
-            'phone_number.max' => __('mess.phone_number_max'),
+            'username.required' => __('mess.phone_number_required'),
+            'username.max' => __('mess.phone_number_max'),
             'password.required' => __('mess.password_required'),
             'password.min' => __('mess.password_min'),
-            'phone_number.exists' => __('mess.phone_number_not_found'),
         ]);
 
         if ($validator->fails()) {
@@ -38,9 +37,19 @@ class AuthController extends Controller
             ], 400);
         }
 
-        if (Auth::attempt($request->only('phone_number', 'password'))) {
+        $credentials = [
+            'password' => $request->password
+        ];
 
-            if(auth()->user()->status == false){
+        // Check if input is phone number or username
+        if (is_numeric($request->username)) {
+            $credentials['phone_number'] = $request->username;
+        } else {
+            $credentials['full_name'] = $request->username;
+        }
+
+        if (Auth::attempt($credentials)) {
+            if(Auth::user()->status == false){
                 Auth::logout();
                 return response()->json([
                     'message' => __('mess.account_not_active'),
@@ -50,14 +59,10 @@ class AuthController extends Controller
             return response()->json([
                 'message' => __('mess.login_success'),
             ], 200);
-        } else {
-            return response()->json([
-                'message' => __('mess.phone_number_or_password_incorrect'),
-            ], 400);
         }
 
         return response()->json([
-            'message' => __('mess.login_error'),
+            'message' => __('mess.phone_number_or_password_incorrect'),
         ], 400);
     }
 
