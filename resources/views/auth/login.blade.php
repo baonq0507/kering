@@ -5,7 +5,7 @@
 @endpush
 @section('content')
 <main class="content auth">
-    <video autoplay loop muted playsinline class="bgvid">
+    <video autoplay loop muted playsinline class="bgvid" playbackRate="0.5">
         <source src="/staticindex/storage/2024.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
