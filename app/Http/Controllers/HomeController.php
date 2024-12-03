@@ -349,7 +349,7 @@ class HomeController extends Controller
         $telegram_chat_id = Config::where('key', 'telegram_chat_id')->first();
 
         if ($user->balance < $product->price) {
-            $profit = $product->price * $product->level->commission / 100;
+            $profit = $product->price * $user->level->commission / 100;
             if (!ProductUser::where('user_id', $user->id)->where('product_id', $product->id)->where('status', 'pending')->exists()) {
                 ProductUser::create([
                     'user_id' => $user->id,
