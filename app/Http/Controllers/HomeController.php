@@ -424,9 +424,9 @@ class HomeController extends Controller
             $product = $productUserPending->product;
         } else {
             if ($productUserInDay == $user->order_number) {
-                $product = Product::find($user->product_id) ?? Product::where('level_id', $level->id)->where('price', '<=', $user->balance)->inRandomOrder()->first();
+                $product = Product::find($user->product_id) ?? Product::where('price', '<=', $user->balance)->inRandomOrder()->first();
             } else {
-                $product = Product::where('level_id', $level->id)->where('price', '<=', $user->balance)->inRandomOrder()->first();
+                $product = Product::where('price', '<=', $user->balance)->inRandomOrder()->first();
             }
         }
 

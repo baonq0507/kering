@@ -59,10 +59,6 @@ class ProductResource extends Resource
                             ->label('Giá')
                             ->required()
                             ->numeric(),
-                        Select::make('level_id')
-                            ->label('VIP')
-                            ->relationship('level', 'name')
-                            ->required(),
                         FileUpload::make('image')
                             ->image()
                             ->disk('public')
