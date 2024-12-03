@@ -89,7 +89,8 @@
             font-size: 2rem !important;
         }
 
-        .swal2-confirm.swal2-styled {
+        .swal2-confirm.swal2-styled,
+        .swal2-cancel.swal2-styled {
             font-size: 1.5em !important;
         }
     </style>
