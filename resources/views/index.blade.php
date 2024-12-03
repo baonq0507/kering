@@ -19,8 +19,8 @@
         </div>
         <div class="container">
             <div class="banner-btn">
-                <a class="btn btn-benefit"><img src="/staticindex/QWZXHb4.png" alt=""><span>{{__('mess.recharge')}}</span></a>
-                <a class="btn btn-benefit"><img src="/staticindex/mQzbkll.png" alt=""><span>{{__('mess.customer_service')}}</span></a>
+                <a class="btn btn-benefit cskh"><img src="/staticindex/QWZXHb4.png" alt=""><span>{{__('mess.recharge')}}</span></a>
+                <a class="btn btn-benefit cskh"><img src="/staticindex/mQzbkll.png" alt=""><span>{{__('mess.customer_service')}}</span></a>
                 <a href="{{route('withdraw.index')}}" class="btn btn-benefit"><img src="/staticindex/T5qTABW.png" alt=""><span>{{__('mess.withdraw')}}</span></a>
             </div>
         </div>
