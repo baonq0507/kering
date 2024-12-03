@@ -27,6 +27,7 @@
     <link href="/staticindex/asset-site/css/animate.css?v=1.1.1" type="text/css" rel="stylesheet" />
     <script src="/staticindex/asset-site/js/jquery.js?v=1.1.1" type="text/javascript"></script>
     <link rel="stylesheet" href="/staticindex/asset-site/css/style.css?v=1.1.1">
+
     <script>
         window.__lc = window.__lc || {};
         window.__lc.license = "{{ $livechat_id }}";
@@ -83,8 +84,13 @@
         }
     </script>
     <style>
-        .swal2-html-container, .swal2-title {
+        .swal2-html-container,
+        .swal2-title {
             font-size: 2rem !important;
+        }
+
+        .swal2-confirm.swal2-styled {
+            font-size: 1.5em !important;
         }
     </style>
     @stack('css')
@@ -138,6 +144,8 @@
             openLiveChat()
         })
     </script>
+    <script type='text/javascript' src='https://hoangluyen.com/demo/js/snow.mini.js'></script>
+
     @if(auth()->check())
     <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
     <script>
