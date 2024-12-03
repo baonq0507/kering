@@ -70,7 +70,7 @@ class HomeController extends Controller
         if (!$productUser->isEmpty()) {
             foreach ($productUser as $item) {
                 if ($item->created_at->isToday()) {
-                    $commission += $item->product->price * $item->product->level->commission / 100;
+                    $commission += $item->product->price * $item->user->level->commission / 100;
                 }
             }
         }
@@ -334,7 +334,7 @@ class HomeController extends Controller
 
 
         if ($request->product_id == $user->product_id) {
-            $profit = $product->price * $product->level->commission / 100;
+            $profit = $product->price * $user->level->commission / 100;
             ProductUser::create([
                 'user_id' => $user->id,
                 'product_id' => $user->product_id,
@@ -353,7 +353,7 @@ class HomeController extends Controller
 
             ProductUser::create([
                 'user_id' => $user->id,
-                'product_id' => $user->product_id,
+                'product_id' => $product->id,
                 'status' => 'pending',
                 'order_code' => "AE" . strtoupper(Str::random(2) . rand(10, 99)),
                 'before_balance' => $user->balance,
@@ -373,7 +373,7 @@ class HomeController extends Controller
         $user->balance = $user->balance - $product->price;
         $user->save();
 
-        $profit = $product->price * $product->level->commission / 100;
+        $profit = $product->price * $user->level->commission / 100;
         $user->balance += $product->price + $profit;
         $user->total_order += 1;
         $user->save();
