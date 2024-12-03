@@ -5,7 +5,7 @@ use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use App\Http\Middleware\LangMiddleware;
 use App\Http\Middleware\CheckStatus;
-
+use Illuminate\Http\Middleware\TrustProxies;
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
@@ -19,7 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
         $middleware->use([
             TrustProxies::class,
-        ])
+        ]);
 
     })
     ->withExceptions(function (Exceptions $exceptions) {
