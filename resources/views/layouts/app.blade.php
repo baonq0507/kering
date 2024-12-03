@@ -132,6 +132,7 @@
             e.preventDefault();
             openLiveChat()
         })
+        $('video').playbackRate = 0.5;
     </script>
     @if(auth()->check())
     <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
