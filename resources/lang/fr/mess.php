@@ -226,4 +226,6 @@ return [
     'mission_not_active' => 'Votre compte a été bloqué!',
     'about_us' => 'À propos de nous',
     'unlock_level' => 'Débloquer le niveau',
+    'confirm' => 'Confirmer',
+    'cancel' => 'Annuler',
 ];

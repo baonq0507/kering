@@ -117,7 +117,7 @@
                             imageHeight: 'auto',
                             showCloseButton: true,
                             showCancelButton: true,
-                            confirmButtonText: "{{ __('mess.product_buy') }}",
+                            confirmButtonText: "{{ __('mess.confirm') }}",
                             cancelButtonText: "{{ __('mess.cancel') }}"
                         }).then((result) => {
                             if (result.isConfirmed) {

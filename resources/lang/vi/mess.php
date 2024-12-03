@@ -226,4 +226,5 @@ return [
     'mission_not_active' => 'Tài khoản của bạn đã bị đóng băng!',
     'about_us' => 'About us',
     'unlock_level' => 'Unlock level',
+    'confirm' => 'Xác nhận',
 ];

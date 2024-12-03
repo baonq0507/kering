@@ -226,4 +226,5 @@ return [
     'mission_not_active' => 'Your account has been blocked!',
     'about_us' => 'About us',
     'unlock_level' => 'Unlock level',
+    'confirm' => 'Confirm',
 ];

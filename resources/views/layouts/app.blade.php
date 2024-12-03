@@ -82,6 +82,11 @@
             }
         }
     </script>
+    <style>
+        .swal2-html-container{
+            font-size: 1.5rem;
+        }
+    </style>
     @stack('css')
 </head>
 
