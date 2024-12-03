@@ -185,6 +185,7 @@
                             setTimeout(() => {
                                 $('.pyro').addClass('d-none');
                             }, 3000);
+                            return;
                         } else {
                             Swal.fire({
                                 title: "{{ __('mess.error') }}",
