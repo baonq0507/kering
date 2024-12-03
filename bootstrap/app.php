@@ -5,6 +5,8 @@ use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use App\Http\Middleware\LangMiddleware;
 use App\Http\Middleware\CheckStatus;
+use App\Http\Middleware\TrustProxies;
+
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
@@ -16,6 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'lang' => LangMiddleware::class,
             'checkstatus' => CheckStatus::class,
         ]);
+        $middleware->trustProxies();
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
