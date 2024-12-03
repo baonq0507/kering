@@ -84,7 +84,7 @@
     </script>
     <style>
         .swal2-html-container{
-            font-size: 1.5rem;
+            font-size: 1.5rem !important;
         }
     </style>
     @stack('css')

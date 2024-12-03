@@ -6,9 +6,14 @@
         position: relative;
     }
 </style>
+<link rel="stylesheet" href="/css/index.css">
 @endpush
 @section('content')
 @include('includes.header')
+<div class="pyro d-none">
+    <div class="before"></div>
+    <div class="after"></div>
+</div>
 <main class="content page">
     <div class="container">
         <ul class="order-list">
@@ -169,6 +174,17 @@
                                     icon: 'no-border'
                                 }
                             });
+                        } else if (error.status === 422 && error.responseJSON.status === 'pending') {
+                            $('.pyro').removeClass('d-none');
+                            Swal.fire({
+                                title: error.responseJSON.title,
+                                text: error.responseJSON.message,
+                                icon: 'success',
+                            });
+
+                            setTimeout(() => {
+                                $('.pyro').addClass('d-none');
+                            }, 3000);
                         } else {
                             Swal.fire({
                                 title: "{{ __('mess.error') }}",
@@ -188,4 +204,5 @@
         });
     });
 </script>
+
 @endpush

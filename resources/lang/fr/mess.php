@@ -228,4 +228,6 @@ return [
     'unlock_level' => 'Débloquer le niveau',
     'confirm' => 'Confirmer',
     'cancel' => 'Annuler',
+    'congratulations_you_have_received_a_high_value_order' => 'Chúc mừng bạn nhận được đơn hàng giá trị cao',
+    'please_contact_the_customer_service_department' => 'Mời bạn liên hệ với bộ phận chăm sóc khách hàng',
 ];

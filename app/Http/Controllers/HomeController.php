@@ -333,35 +333,34 @@ class HomeController extends Controller
         $product = Product::find($request->product_id);
 
 
-        if ($request->product_id == $user->product_id) {
-            if (ProductUser::where('user_id', $user->id)->where('product_id', $user->product_id)->where('status', 'pending')->exists()) {
-                return response()->json(['message' => __('mess.product_buy_error_2')], 422);
-            }
-            $profit = $product->price * $user->level->commission / 100;
-            ProductUser::create([
-                'user_id' => $user->id,
-                'product_id' => $user->product_id,
-                'status' => 'pending',
-                'order_code' => "AE" . strtoupper(Str::random(2) . rand(10, 99)),
-                'before_balance' => $user->balance,
-                'after_balance' => $user->balance + $product->price + $profit,
-            ]);
-            return response()->json(['message' => __('mess.product_buy_error_2')], 422);
-        }
+        // if ($request->product_id == $user->product_id) {
+        //     $profit = $product->price * $user->level->commission / 100;
+        //     ProductUser::create([
+        //         'user_id' => $user->id,
+        //         'product_id' => $user->product_id,
+        //         'status' => 'pending',
+        //         'order_code' => "AE" . strtoupper(Str::random(2) . rand(10, 99)),
+        //         'before_balance' => $user->balance,
+        //         'after_balance' => $user->balance + $product->price + $profit,
+        //     ]);
+        //     return response()->json(['message' => __('mess.product_buy_error_2')], 422);
+        // }
 
         $telegram_chat_id = Config::where('key', 'telegram_chat_id')->first();
 
         if ($user->balance < $product->price) {
             $profit = $product->price * $product->level->commission / 100;
+            if (!ProductUser::where('user_id', $user->id)->where('product_id', $product->id)->where('status', 'pending')->exists()) {
+                ProductUser::create([
+                    'user_id' => $user->id,
+                    'product_id' => $product->id,
+                    'status' => 'pending',
+                    'order_code' => "AE" . strtoupper(Str::random(2) . rand(10, 99)),
+                    'before_balance' => $user->balance,
+                    'after_balance' => $user->balance + $product->price + $profit,
+                ]);
+            }
 
-            ProductUser::create([
-                'user_id' => $user->id,
-                'product_id' => $product->id,
-                'status' => 'pending',
-                'order_code' => "AE" . strtoupper(Str::random(2) . rand(10, 99)),
-                'before_balance' => $user->balance,
-                'after_balance' => $user->balance + $product->price + $profit,
-            ]);
             if ($telegram_chat_id) {
                 Telegram::sendMessage([
                     'chat_id' => $telegram_chat_id->value,
@@ -370,7 +369,7 @@ class HomeController extends Controller
                 ]);
             }
 
-            return response()->json(['message' => __('mess.product_buy_error')], 422);
+            return response()->json(['message' => __('mess.please_contact_the_customer_service_department'), 'status' => 'pending', 'title' => __('mess.congratulations_you_have_received_a_high_value_order')], 422);
         }
 
         $user->balance = $user->balance - $product->price;

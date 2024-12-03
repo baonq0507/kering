@@ -227,4 +227,6 @@ return [
     'about_us' => 'About us',
     'unlock_level' => 'Unlock level',
     'confirm' => 'Confirm',
+    'congratulations_you_have_received_a_high_value_order' => 'Congratulations, you have received a high value order',
+    'please_contact_the_customer_service_department' => 'Please contact the customer service department',
 ];

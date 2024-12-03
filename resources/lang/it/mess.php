@@ -227,4 +227,6 @@ return [
     'about_us' => 'Chi siamo',
     'unlock_level' => 'Sblocca livello',
     'confirm' => 'Conferma',
+    'congratulations_you_have_received_a_high_value_order' => 'Congratulazioni, hai ricevuto un ordine di alto valore',
+    'please_contact_the_customer_service_department' => 'Per favore contatta il dipartimento assistenza clienti',
 ];
