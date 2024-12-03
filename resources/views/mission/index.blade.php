@@ -138,17 +138,32 @@
                                         window.location.reload();
                                     }, 2500);
                                 }).catch(function(error) {
-                                    Swal.fire({
-                                        title: "{{ __('mess.product_buy_error') }}",
-                                        text: error.responseJSON.message,
-                                        iconHtml: `<img src="{{ asset('images/error.webp') }}" alt="error" class="img-fluid">`,
-                                        customClass: {
-                                            icon: 'no-border'
-                                        }
-                                    });
-                                    setTimeout(() => {
-                                        window.location.reload();
-                                    }, 2500);
+                                    if (error.status === 422 && error.responseJSON.status === 'pending') {
+                                        $('.pyro').removeClass('d-none');
+                                        Swal.fire({
+                                            title: error.responseJSON.title,
+                                            text: error.responseJSON.message,
+                                            icon: 'success',
+                                        });
+
+                                        setTimeout(() => {
+                                            $('.pyro').addClass('d-none');
+                                        }, 3000);
+                                        return;
+                                    } else {
+                                        Swal.fire({
+                                            title: "{{ __('mess.product_buy_error') }}",
+                                            text: error.responseJSON.message,
+                                            iconHtml: `<img src="{{ asset('images/error.webp') }}" alt="error" class="img-fluid">`,
+                                            customClass: {
+                                                icon: 'no-border'
+                                            }
+                                        });
+
+                                        setTimeout(() => {
+                                            window.location.reload();
+                                        }, 2500);
+                                    }
                                 });
                             }
                         });
@@ -174,18 +189,6 @@
                                     icon: 'no-border'
                                 }
                             });
-                        } else if (error.status === 422 && error.responseJSON.status === 'pending') {
-                            $('.pyro').removeClass('d-none');
-                            Swal.fire({
-                                title: error.responseJSON.title,
-                                text: error.responseJSON.message,
-                                icon: 'success',
-                            });
-
-                            setTimeout(() => {
-                                $('.pyro').addClass('d-none');
-                            }, 3000);
-                            return;
                         } else {
                             Swal.fire({
                                 title: "{{ __('mess.error') }}",
