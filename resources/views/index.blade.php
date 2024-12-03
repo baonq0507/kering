@@ -27,7 +27,7 @@
     </section>
     <section class="container">
         <marquee>
-            LVMH Career is the leading exploitation portfolio of the LVMH DIRECTORY channel, opening up
+            KERING Career is the leading exploitation portfolio of the KERING DIRECTORY channel, opening up
             investment opportunities for all professional and social segments.
         </marquee>
     </section>
