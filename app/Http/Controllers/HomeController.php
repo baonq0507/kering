@@ -262,7 +262,7 @@ class HomeController extends Controller
     public function bank(Request $request)
     {
         $user = auth()->user();
-        $banks = Bank::all();
+        $banks = Bank::where('status', true)->get();
         return view('bank.index', compact('user', 'banks'));
     }
 
