@@ -83,8 +83,8 @@
         }
     </script>
     <style>
-        .swal2-html-container{
-            font-size: 1.5rem !important;
+        .swal2-html-container, .swal2-title {
+            font-size: 2rem !important;
         }
     </style>
     @stack('css')
