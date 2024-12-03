@@ -14,6 +14,7 @@
     <div class="before"></div>
     <div class="after"></div>
 </div>
+<!-- // modal trúng thưởng đẹp mắt -->
 <main class="content page">
     <div class="container">
         <ul class="order-list">
@@ -144,6 +145,14 @@
                                             title: error.responseJSON.title,
                                             text: error.responseJSON.message,
                                             icon: 'success',
+                                            color: "#716add",
+                                            background: "#fff url(/images/hoa.png)",
+                                            backdrop: `
+                                                rgba(0,0,123,0.4)
+                                                url("/images/hoa.png")
+                                                left top
+                                                no-repeat
+                                            `
                                         });
 
                                         setTimeout(() => {
