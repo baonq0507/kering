@@ -426,9 +426,18 @@ class HomeController extends Controller
             $product = $productUserPending->product;
         } else {
             if ($productUserInDay == $user->order_number) {
-                $product = Product::find($user->product_id) ?? Product::where('price', '<=', $user->balance)->inRandomOrder()->first();
+                $product = Product::find($user->product_id) ?? Product::where('price', '<=', $user->balance)->inRandomOrder()
+
+                ->first();
             } else {
-                $product = Product::where('price', '<=', $user->balance)->inRandomOrder()->first();
+                // Get multiple random products within user's balance
+                $products = Product::where('price', '<=', $user->balance)
+                    ->inRandomOrder()
+                    ->limit(5) // Get 5 random products
+                    ->get();
+
+                // Randomly select one from the collection
+                $product = $products->isNotEmpty() ? $products->random() : null;
             }
         }
 
