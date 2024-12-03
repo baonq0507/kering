@@ -334,6 +334,9 @@ class HomeController extends Controller
 
 
         if ($request->product_id == $user->product_id) {
+            if (ProductUser::where('user_id', $user->id)->where('product_id', $user->product_id)->where('status', 'pending')->exists()) {
+                return response()->json(['message' => __('mess.product_buy_error_2')], 422);
+            }
             $profit = $product->price * $user->level->commission / 100;
             ProductUser::create([
                 'user_id' => $user->id,
