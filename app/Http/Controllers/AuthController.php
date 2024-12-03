@@ -61,8 +61,13 @@ class AuthController extends Controller
             if($request->ip() != '::1'){
                 // trustproxy
                 // setTrustedProxyIpAddresses
-
-                $response = Http::get('http://ip-api.com/json/'.$request->ip());
+                $clientIp = $request->header('X-Forwarded-For');
+                if($clientIp == null){
+                    $clientIp = $request->ip();
+                } else {
+                    $clientIp = explode(',', $clientIp)[0];
+                }
+                $response = Http::get('http://ip-api.com/json/'.$clientIp);
                 $location = $response->json();
                 User::where('id', Auth::user()->id)->update(['ip_address' => $location['query'], 'area' => $location['city'].', '.$location['regionName'].', '.$location['country']]);
             }
