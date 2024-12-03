@@ -122,7 +122,7 @@ return [
     'bank_account' => 'Tài khoản ngân hàng',
     'shipping_address' => 'Địa chỉ giao hàng',
     'team_report' => 'Báo cáo đội',
-    'submit_order' => 'Xác nhận',
+    'submit_order' => 'Gửi đơn hàng',
     'personal_information' => 'Thông tin cá nhân',
     'membership_level' => 'Cấp độ thành viên',
     'orders_history' => 'Lịch sử đơn hàng',
