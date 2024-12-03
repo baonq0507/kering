@@ -90,7 +90,7 @@ return [
     'product_buy_error_2' => 'Số dư không đủ',
     'mission_start_error_1' => 'Số dư không đủ',
     'mission_start_error' => 'Không thể bắt đầu nhiệm vụ',
-    'product_buy' => 'Xác nhận',
+    'product_buy' => 'Lấy đơn hàng',
     'cancel' => 'Hủy',
     'price_product' => 'Giá sản phẩm :price, hoa hồng :profit%',
     'account_balance' => 'Số dư tài khoản',

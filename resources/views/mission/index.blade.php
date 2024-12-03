@@ -5,7 +5,6 @@
     .bgvid {
         position: relative;
     }
-
 </style>
 @endpush
 @section('content')
@@ -110,7 +109,7 @@
                         const data = response.data;
                         const level = response.level;
                         Swal.fire({
-                            imageUrl: data.image,
+                            imageUrl: `{{ asset('storage/${data.image}') }}`,
                             icon: 'success',
                             title: limitString(data.name, 30),
                             text: `{{ __('mess.price_product', ['price' => ':price', 'profit' => ':profit']) }}`.replace(':price', data.price).replace(':profit', level.commission),
