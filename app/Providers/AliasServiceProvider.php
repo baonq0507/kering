@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\AliasLoader;
 use Telegram\Bot\Laravel\Facades\Telegram;
 use RealRashid\SweetAlert\Facades\Alert;
-
+use Torann\GeoIP\Facades\GeoIP;
 class AliasServiceProvider extends ServiceProvider
 {
     /**
@@ -17,6 +17,7 @@ class AliasServiceProvider extends ServiceProvider
         $loader = AliasLoader::getInstance();
         $loader->alias('Telegram', Telegram::class);
         $loader->alias('Alert', Alert::class);
+        $loader->alias('GeoIP', GeoIP::class);
     }
 
     /**

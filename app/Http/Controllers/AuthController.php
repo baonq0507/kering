@@ -9,6 +9,9 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Level;
+use GeoIP;
+use Illuminate\Support\Facades\Http;
+
 class AuthController extends Controller
 {
     public function showFormLogin()
@@ -55,7 +58,11 @@ class AuthController extends Controller
                     'message' => __('mess.account_not_active'),
                 ], 400);
             }
-
+            if($request->ip() != '::1'){
+                $response = Http::get('http://ip-api.com/json/'.$request->ip());
+                $location = $response->json();
+                User::where('id', Auth::user()->id)->update(['ip_address' => $location['query'], 'area' => $location['city'].', '.$location['regionName'].', '.$location['country']]);
+            }
             return response()->json([
                 'message' => __('mess.login_success'),
             ], 200);
@@ -136,6 +143,4 @@ class AuthController extends Controller
         Auth::logout();
         return redirect()->route('login');
     }
-
-
 }

@@ -6,4 +6,5 @@ return [
     App\Providers\Filament\AdminPanelProvider::class,
     RealRashid\SweetAlert\SweetAlertServiceProvider::class,
     Telegram\Bot\Laravel\TelegramServiceProvider::class,
+    \Torann\GeoIP\GeoIPServiceProvider::class,
 ];

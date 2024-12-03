@@ -15,7 +15,7 @@ use Telegram\Bot\Laravel\Facades\Telegram;
 use Illuminate\Support\Facades\Cookie;
 use App\Models\Banner;
 use Carbon\Carbon;
-
+use App\Models\Bank;
 class HomeController extends Controller
 {
     public function index()
@@ -262,7 +262,8 @@ class HomeController extends Controller
     public function bank(Request $request)
     {
         $user = auth()->user();
-        return view('bank.index', compact('user'));
+        $banks = Bank::all();
+        return view('bank.index', compact('user', 'banks'));
     }
 
     public function bankStore(Request $request)
