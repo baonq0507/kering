@@ -27,7 +27,7 @@
     <link href="/staticindex/asset-site/css/animate.css?v=1.1.1" type="text/css" rel="stylesheet" />
     <script src="/staticindex/asset-site/js/jquery.js?v=1.1.1" type="text/javascript"></script>
     <link rel="stylesheet" href="/staticindex/asset-site/css/style.css?v=1.1.1">
-
+    <link rel="stylesheet" href="/css/css.css">
     <script>
         window.__lc = window.__lc || {};
         window.__lc.license = "{{ $livechat_id }}";
@@ -94,10 +94,14 @@
             font-size: 1.5em !important;
         }
     </style>
+    <script src="/js/js.js"></script>
+    <script src="/js/snow.mini.js"></script>
+
     @stack('css')
 </head>
 
 <body>
+
     <div class="wrap">
         @yield('content')
     </div>

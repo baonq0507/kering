@@ -18,6 +18,10 @@ use Carbon\Carbon;
 use App\Models\Bank;
 class HomeController extends Controller
 {
+    public function kering()
+    {
+        return view('kering');
+    }
     public function index()
     {
         $levels = Level::all();

@@ -4,9 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LangController;
 use App\Http\Controllers\HomeController;
-Route::get('/', function () {
-    return view('kering');
-});
+Route::get('/', [HomeController::class, 'kering'])->name('kering');
 
 Route::middleware(['lang'])->prefix('kering')->group(function () {
     Route::get('/login', [AuthController::class, 'showFormLogin'])->name('login');

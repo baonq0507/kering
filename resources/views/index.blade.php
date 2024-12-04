@@ -107,5 +107,7 @@
     </div>
 </div>
 @endforeach
+<!-- @include('includes.nodel') -->
+
 @include('includes.footer')
 @endsection
