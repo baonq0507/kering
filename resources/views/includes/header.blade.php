@@ -4,7 +4,7 @@
             <a class="smooth language-www language-dropdown mr-3 d-block d-md-none" href="javascript:;"
                 title="">
                 @php
-                $lang = session('lang') ?? 'vn';
+                $lang = session('lang') ?? 'en';
                 @endphp
                 <div class="language-button"><img src="/staticindex/vendor/core/core/base/images/flags/{{$lang}}.png" alt="" /></div>
                 <div class="language-dropdown-content">

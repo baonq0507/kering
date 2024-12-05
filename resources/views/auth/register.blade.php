@@ -12,7 +12,7 @@
         <div class="language-dropdown">
             <div class="language-button">
                 @php
-                $lang = session('lang') ?? 'vn';
+                $lang = session('lang') ?? 'en';
                 @endphp
                 <img src="/staticindex/vendor/core/core/base/images/flags/{{ $lang }}.png" alt="" />
             </div>
