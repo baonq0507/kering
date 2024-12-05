@@ -25,10 +25,11 @@
                 </div>
                 <span class="order-percent">{{ __('mess.commission') }} : {{ auth()->user()->level->commission }}%</span>
                 <div class="order-img">
-                    <video autoplay loop muted playsinline class="bgvid">
+                    <!-- <video autoplay loop muted playsinline class="bgvid">
                         <source src="/staticindex/storage/setting/dcmcmm.mov" type="video/mp4">
                         Your browser does not support the video tag.
-                    </video>
+                    </video> -->
+                    <img src="/images/quay.jpg" alt="" class="img-fluid">
                 </div>
                 <div class="text-center order-action">
                     <div><button class="btn btn-primary startAnim">{{ __('mess.product_buy') }}</button></div>
