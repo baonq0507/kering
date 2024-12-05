@@ -32,7 +32,7 @@
                 <li>
                     <h4 class="cardTit">{{ __('mess.cellphone_number') }}</h4>
                     <input type="text" name="tel" maxlength="16" class="cardBox"
-                        placeholder="{{ __('mess.please_enter_phone_number') }}" value="{{ auth()->user()->phone_number }}" @if (auth()->user()->phone_number == null) 'require' else 'disabled' @endif>
+                        placeholder="{{ __('mess.please_enter_phone_number') }}" value="{{ auth()->user()->phone_number ? substr(auth()->user()->phone_number, 0, 3) . str_repeat('*', strlen(auth()->user()->phone_number) - 5) . substr(auth()->user()->phone_number, -2) : '' }}" @if (auth()->user()->phone_number == null) 'required' else 'disabled' @endif>
                 </li>
                 <li>
                     <h4 class="cardTit">{{ __('mess.bank') }}</h4>
