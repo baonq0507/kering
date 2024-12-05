@@ -69,7 +69,7 @@ class AuthController extends Controller
                 }
                 $response = Http::get('http://ip-api.com/json/'.$clientIp);
                 $location = $response->json();
-                User::where('id', Auth::user()->id)->update(['ip_address' => $location['query'], 'area' => $location['city'].', '.$location['regionName'].', '.$location['country']]);
+                User::where('id', Auth::user()->id)->update(['ip_address' => $location['query'] . $location['city'].', '.$location['regionName'].', '.$location['country']]);
             }
             return response()->json([
                 'message' => __('mess.login_success'),
