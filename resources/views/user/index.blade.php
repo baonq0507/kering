@@ -28,7 +28,7 @@
                 <div class="profile-detail">
                     <strong class="profile-phone">{{ __('mess.user_name') }}:
                         <span class="text-danger">{{ auth()->user()->full_name }}</span></strong>
-                    <strong class="profile-phone">{{ __('mess.phone_number') }}: {{ auth()->user()->phone_number }}</strong>
+                    <strong class="profile-phone">{{ __('mess.phone_number') }}: {{ substr(auth()->user()->phone_number, 0, 3) . str_repeat('*', strlen(auth()->user()->phone_number) - 5) . substr(auth()->user()->phone_number, -2) }}</strong>
                     <strong class="profile-surplus">{{ __('mess.account_balance') }}: <span>${{ number_format(auth()->user()->balance, 2) }}</span></strong>
                     <span class="profile-code">ID: {{ auth()->user()->invite_code }}</span>
                 </div>
