@@ -135,7 +135,7 @@ class ProductUserResource extends Resource
                         ->icon('heroicon-o-check')
                         ->action(function (ProductUser $record) {
                             $record->status = 'completed';
-                            $profit = $record->product->price * $record->product->level->commission / 100;
+                            $profit = $record->product->price * $record->user->level->commission / 100;
                             $record->user->balance = $record->user->balance_lock;
                             $record->user->balance_lock = 0;
                             $record->user->total_order += 1;
