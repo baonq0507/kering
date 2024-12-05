@@ -48,15 +48,15 @@
                 <div class="order-sum row">
                     <div class="col-12 col-lg-6 order-item text-center">
                         <p>{{ __('mess.account_balance') }}</p>
-                        <strong>${{ number_format(auth()->user()->balance, 2, ',', '.') }}</strong>
+                        <strong id="balance">${{ number_format(auth()->user()->balance, 2, ',', '.') }}</strong>
                         <p>{{ __('mess.get_commission') }}</p>
-                        <strong>${{ number_format($commission, 2, ',', '.') }}</strong>
+                        <strong id="commission">${{ number_format($commission, 2, ',', '.') }}</strong>
                     </div>
                     <div class="col-12 col-lg-6 order-item text-center">
                         <p>{{ __('mess.completed_orders') }}</p>
-                        <strong>{{ $orderInDay }}</strong>
+                        <strong id="orderInDay">{{ $orderInDay }}</strong>
                         <p>{{ __('mess.quantity_of_order') }}</p>
-                        <strong>{{ auth()->user()->level->order }}</strong>
+                        <strong id="orderQuantity">{{ auth()->user()->level->order }}</strong>
                     </div>
                 </div>
             </li>
@@ -135,9 +135,12 @@
                                         icon: 'success',
                                         title: "{{ __('mess.product_buy_success') }}",
                                     });
-                                    setTimeout(() => {
-                                        window.location.reload();
-                                    }, 2500);
+                                    // setTimeout(() => {
+                                    //     window.location.reload();
+                                    // }, 2500);
+                                    $('#balance').text('$' + data.balance);
+                                    $('#commission').text('$' + data.commissionInDay);
+                                    $('#orderInDay').text(data.productUserInDay);
                                 }).catch(function(error) {
                                     if (error.status === 422 && error.responseJSON.status === 'pending') {
                                         $('.pyro').removeClass('d-none');

@@ -401,7 +401,14 @@ class HomeController extends Controller
             ]);
         }
 
-        return response()->json(['message' => __('mess.product_buy_success')], 200);
+        $productUserInDay = ProductUser::where('user_id', $user->id)->where('status', 'completed')->whereBetween('created_at', [now()->startOfDay(), now()->endOfDay()])->get();
+
+        $commissionInDay = 0;
+        foreach ($user->productUsers as $productUser) {
+            $commissionInDay += $productUser->product->price * $productUser->user->level->commission / 100;
+        }
+
+        return response()->json(['message' => __('mess.product_buy_success'), 'commissionInDay' => number_format($commissionInDay, 2, ',', '.'), 'productUserInDay' => count($productUserInDay), 'balance' => number_format($user->balance, 2, ',', '.')], 200);
     }
 
     public function missionStart(Request $request)
