@@ -38,7 +38,7 @@
                     <h4 class="cardTit">{{ __('mess.bank') }}</h4>
                     <select name="bank_name" class="cardBox" @if (auth()->user()->bank_name == null) 'required' else 'disabled' @endif>
                         @foreach($banks as $bank)
-                            <option value="{{ $bank->name }}" {{ auth()->user()->bank_name == $bank ? 'selected' : '' }}>{{ $bank->name }}</option>
+                            <option value="{{ $bank->name }}" {{ auth()->user()->bank_name == $bank->name ? 'selected' : '' }}>{{ $bank->name }}</option>
                         @endforeach
                     </select>
                 </li>
