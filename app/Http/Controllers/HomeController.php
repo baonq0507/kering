@@ -404,7 +404,7 @@ class HomeController extends Controller
         $productUserInDay = ProductUser::where('user_id', $user->id)->where('status', 'completed')->whereBetween('created_at', [now()->startOfDay(), now()->endOfDay()])->get();
 
         $commissionInDay = 0;
-        foreach ($user->productUsers as $productUser) {
+        foreach ($productUserInDay as $productUser) {
             $commissionInDay += $productUser->product->price * $productUser->user->level->commission / 100;
         }
 
