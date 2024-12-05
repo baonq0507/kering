@@ -141,6 +141,9 @@
                                     $('#balance').text('$' + response.balance);
                                     $('#commission').text('$' + response.commissionInDay);
                                     $('#orderInDay').text(response.productUserInDay);
+                                    //progress
+                                    $('.progress-bar').css('width', '0%');
+                                    $('.progress-bar').text('0%');
                                 }).catch(function(error) {
                                     if (error.status === 422 && error.responseJSON.status === 'pending') {
                                         $('.pyro').removeClass('d-none');

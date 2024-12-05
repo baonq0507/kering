@@ -443,7 +443,7 @@ class HomeController extends Controller
             } else {
                 // Get multiple random products within user's balance
                 $products = Product::where('price', '<=', $user->balance)
-                    ->limit(5) // Get 5 random products
+                    ->limit(20) // Get 5 random products
                     ->get();
 
                 // Randomly select one from the collection
