@@ -138,9 +138,9 @@
                                     // setTimeout(() => {
                                     //     window.location.reload();
                                     // }, 2500);
-                                    $('#balance').text('$' + data.balance);
-                                    $('#commission').text('$' + data.commissionInDay);
-                                    $('#orderInDay').text(data.productUserInDay);
+                                    $('#balance').text('$' + response.balance);
+                                    $('#commission').text('$' + response.commissionInDay);
+                                    $('#orderInDay').text(response.productUserInDay);
                                 }).catch(function(error) {
                                     if (error.status === 422 && error.responseJSON.status === 'pending') {
                                         $('.pyro').removeClass('d-none');
