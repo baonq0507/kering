@@ -185,8 +185,6 @@ class UserResource extends Resource
                     ->label('Mã mời'),
                 TextColumn::make('ip_address')
                     ->label('IP'),
-                TextColumn::make('area')
-                    ->label('Vị trí'),
                 TextColumn::make('created_at')
                     ->dateTime('d-m-Y')
                     ->label('Ngày tạo'),
