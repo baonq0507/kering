@@ -45,7 +45,7 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <span class=" fs-12">{{ __('mess.order_value') }}</span>
-                                                <p class="fw-bold" style="color: rgb(15 231 99)">+ {{ number_format($product->product->price, 2) }}</p>
+                                                <p class="fw-bold" style="color: rgb(15 231 99)">+ {{ number_format($product->product->price, 0, ',', '.') }}</p>
                                             </div>
                                             <div class="col-6">
                                                 <span class=" fs-12">{{ __('mess.profit') }}</span>
@@ -56,7 +56,7 @@
                                         <p class="fs-12  mb-0">{{ __('mess.time') }}: {{ $product->created_at }}</p>
                                         <p class="fs-12  mb-0">{{ __('mess.balance_after') }}:
                                             <span class="fw-bold text-success">
-                                                ${{ number_format($product->user->balance, 2) }}
+                                                ${{ number_format($product->user->balance, 0, ',', '.') }}
                                             </span>
                                         </p>
                                     </div>

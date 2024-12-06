@@ -28,7 +28,7 @@
                         <div class="rank-card-head">
                             <div class="rank-card-box">
                                 <h3>{{env('APP_NAME')}}@ {{$level->name}}</h3>
-                                <span>${{ number_format($level->min_balance, 2, ',', '.') }}</span>
+                                <span>${{ number_format($level->min_balance, 0, ',', '.') }}</span>
                             </div>
                             <div class="group-status">
                                 <span class="status success cskh" id="open-now">{{__('mess.open_now')}}</span>

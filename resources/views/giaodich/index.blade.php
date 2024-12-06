@@ -42,7 +42,7 @@
                         <div class="group-inner history trans mt-4">
                             <div class="group-info">
                                 <p>{{ __('mess.transaction_code') }}: <span class="code">{{ $transaction->transaction_code }}</span></p>
-                                <p>{{ __('mess.transaction_value') }}: <span class="money">{{ number_format($transaction->amount, 2, ',', '.') }}</span></p>
+                                <p>{{ __('mess.transaction_value') }}: <span class="money">{{ number_format($transaction->amount, 0, ',', '.') }}</span></p>
                             </div>
                             <div class="group-his">
                                 <p><span class="time">{{ $transaction->created_at }}</span></p>

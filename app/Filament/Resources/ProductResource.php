@@ -85,6 +85,7 @@ class ProductResource extends Resource
                     ->sortable()
                     ->label('Danh mục'),
                 TextColumn::make('price')
+                    ->formatStateUsing(fn ($state) => number_format($state, 0, ',', '.'))
                     ->searchable()
                     ->label('Giá'),
 

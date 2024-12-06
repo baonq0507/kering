@@ -108,4 +108,9 @@ class User extends Authenticatable implements FilamentUser, HasName
     {
         return $this->hasMany(Transaction::class);
     }
+
+    public function referrer()
+    {
+        return $this->belongsTo(User::class, 'referrer_id');
+    }
 }

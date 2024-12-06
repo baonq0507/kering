@@ -49,9 +49,9 @@
                 <div class="order-sum row">
                     <div class="col-12 col-lg-6 order-item text-center">
                         <p>{{ __('mess.account_balance') }}</p>
-                        <strong id="balance">${{ number_format(auth()->user()->balance, 2, ',', '.') }}</strong>
+                        <strong id="balance">${{ number_format(auth()->user()->balance, 0, ',', '.') }}</strong>
                         <p>{{ __('mess.get_commission') }}</p>
-                        <strong id="commission">${{ number_format($commission, 2, ',', '.') }}</strong>
+                        <strong id="commission">${{ number_format($commission, 0, ',', '.') }}</strong>
                     </div>
                     <div class="col-12 col-lg-6 order-item text-center">
                         <p>{{ __('mess.completed_orders') }}</p>

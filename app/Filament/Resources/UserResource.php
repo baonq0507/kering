@@ -142,7 +142,7 @@ class UserResource extends Resource
                             ->searchable()
                             ->preload()
                             ->relationship('product', 'name', fn ($query) => $query->select(['id', 'name', 'price']))
-                            ->getOptionLabelFromRecordUsing(fn ($record) => "{$record->name} - {$record->price}$"),
+                            ->getOptionLabelFromRecordUsing(fn ($record) => "{$record->name} - " . number_format($record->price, 0, ',', '.') . '$'),
                     ])->columns(2),
             ]);
     }
@@ -165,7 +165,7 @@ class UserResource extends Resource
                     ->label('Số điện thoại'),
                 TextColumn::make('balance')
                     ->label('Số dư')
-                    ->formatStateUsing(fn ($record) => number_format($record->balance, 2, ',', '.') . '$'),
+                    ->formatStateUsing(fn ($record) => number_format($record->balance, 0, ',', '.') . '$'),
                 // TextColumn::make('balance_lock')
                 //     ->label('Đóng băng'),
                 TextColumn::make('level.name')
@@ -183,6 +183,9 @@ class UserResource extends Resource
                     ->searchable()
                     ->copyable()
                     ->label('Mã mời'),
+                // người mời
+                TextColumn::make('referrer.full_name')
+                    ->label('Người mời'),
                 TextColumn::make('ip_address')
                     ->label('IP'),
                 TextColumn::make('created_at')

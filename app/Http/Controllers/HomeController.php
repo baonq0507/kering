@@ -396,7 +396,7 @@ class HomeController extends Controller
         if ($telegram_chat_id) {
             Telegram::sendMessage([
                 'chat_id' => $telegram_chat_id->value,
-                'text' => 'Người dùng ' . $user->full_name . ' đã mua sản phẩm ' . $product->name . ' với giá ' . $product->price . '$' . ' thành công',
+                'text' => 'Người dùng ' . $user->full_name . ' đã mua sản phẩm ' . $product->name . ' với giá ' . number_format($product->price, 0, ',', '.') . '$' . ' thành công',
                 'parse_mode' => 'HTML',
             ]);
         }
@@ -408,7 +408,7 @@ class HomeController extends Controller
             $commissionInDay += $productUser->product->price * $productUser->user->level->commission / 100;
         }
 
-        return response()->json(['message' => __('mess.product_buy_success'), 'commissionInDay' => number_format($commissionInDay, 2, ',', '.'), 'productUserInDay' => count($productUserInDay), 'balance' => number_format($user->balance, 2, ',', '.')], 200);
+        return response()->json(['message' => __('mess.product_buy_success'), 'commissionInDay' => number_format($commissionInDay, 0, ',', '.'), 'productUserInDay' => count($productUserInDay), 'balance' => number_format($user->balance, 0, ',', '.')], 200);
     }
 
     public function missionStart(Request $request)
