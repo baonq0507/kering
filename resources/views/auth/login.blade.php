@@ -1,7 +1,11 @@
 @extends('layouts.app')
 @section('title', __('mess.login'))
 @push('css')
-
+<style>
+    .bgvid {
+        height: 100%;
+    }
+</style>
 @endpush
 @section('content')
 <main class="content auth">
