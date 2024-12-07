@@ -2,13 +2,11 @@
 @section('title', __('mess.login'))
 @push('css')
 <style>
-    .bgvid {
-        height: 100%;
-    }
+
 </style>
 @endpush
 @section('content')
-<main class="content auth">
+<main class="content auth" style="background-color: #000;">
     <video autoplay loop muted playsinline class="bgvid" playbackRate="0.5">
         <source src="/staticindex/storage/setting/vcl/2024.mp4" type="video/mp4">
         Your browser does not support the video tag.
