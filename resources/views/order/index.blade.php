@@ -49,7 +49,7 @@
                                             </div>
                                             <div class="col-6">
                                                 <span class=" fs-12">{{ __('mess.profit') }}</span>
-                                                <p class="fw-bold" style="color: rgb(255 172 10/1)">+ {{ number_format($product->product->price * $product->product->level->commission / 100, 2) }}</p>
+                                                <p class="fw-bold" style="color: rgb(255 172 10/1)">+ {{ number_format($product->product->price * $product->user->level->commission / 100, 2) }}</p>
                                             </div>
                                         </div>
                                         <p class="fs-12  mb-0">{{ __('mess.order_code') }}: {{ $product->order_code }}</p>

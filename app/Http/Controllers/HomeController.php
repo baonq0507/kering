@@ -218,7 +218,7 @@ class HomeController extends Controller
         if ($start_date) {
             $start_date = Carbon::parse($start_date)->startOfDay();
         } else {
-            $start_date = Carbon::now()->startOfDay();
+            $start_date = Carbon::now()->subMonth()->startOfDay();
         }
         if ($end_date) {
             $end_date = Carbon::parse($end_date)->endOfDay();

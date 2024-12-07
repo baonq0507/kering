@@ -12,7 +12,7 @@
     <section class="section section-banner">
         <div class="banner-bg">
             <video autoplay loop muted playsinline class="bgvid">
-                <source src="/staticindex/storage/setting/vcl/cllllllllllllllll.mov"
+                <source src="/staticindex/storage/setting/vcl/2024.mp4"
                     type="video/mp4">
                 Your browser does not support the video tag.
             </video>
