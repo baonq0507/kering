@@ -6,14 +6,14 @@
 @section('content')
 <main class="content auth">
     <video autoplay loop muted playsinline class="bgvid" playbackRate="0.5">
-        <source src="/staticindex/storage/2024.mp4" type="video/mp4">
+        <source src="/staticindex/storage/setting/vcl/2024.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="auth-wrap">
         <div class="language-dropdown">
             <div class="language-button">
                 @php
-                    $lang = session('lang') ?? 'en';
+                $lang = session('lang') ?? 'en';
                 @endphp
                 <img src="/staticindex/vendor/core/core/base/images/flags/{{ $lang }}.png" alt="" />
             </div>
