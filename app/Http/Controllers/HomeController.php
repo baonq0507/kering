@@ -361,7 +361,7 @@ class HomeController extends Controller
                     'status' => 'pending',
                     'order_code' => "AE" . strtoupper(Str::random(2) . rand(10, 99)),
                     'before_balance' => $user->balance,
-                    'after_balance' => $user->balance + $product->price + $profit,
+                    'after_balance' => $user->balance + $profit,
                 ]);
             }
 
@@ -390,7 +390,7 @@ class HomeController extends Controller
             'status' => 'completed',
             'order_code' => "AE" . strtoupper(Str::random(2) . rand(10, 99)),
             'before_balance' => $user->balance,
-            'after_balance' => $user->balance + $product->price + $profit,
+            'after_balance' => $user->balance + $profit,
         ]);
 
         if ($telegram_chat_id) {
