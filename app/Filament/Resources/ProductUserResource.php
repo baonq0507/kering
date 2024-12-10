@@ -102,10 +102,10 @@ class ProductUserResource extends Resource
                     ->formatStateUsing(fn ($record) => "{$record->product->id} - " . Str::limit($record->product->name, 20) . " - {$record->product->price}$"),
                 TextColumn::make('before_balance')
                     ->label('Số dư trước')
-                    ->formatStateUsing(fn ($record) => number_format($record->before_balance, 2, ',', '.') . '$'),
+                    ->formatStateUsing(fn ($record) => number_format($record->before_balance, 0, ',', '.') . '$'),
                 TextColumn::make('after_balance')
                     ->label('Số dư sau')
-                    ->formatStateUsing(fn ($record) => number_format($record->after_balance, 2, ',', '.') . '$'),
+                    ->formatStateUsing(fn ($record) => number_format($record->after_balance, 0, ',', '.') . '$'),
                 TextColumn::make('status')
                     ->label('Trạng thái')
                     ->formatStateUsing(fn ($state) => $state === 'pending' ? 'Chờ thực hiện' : ($state === 'completed' ? 'Đã thực hiện' : 'Thất bại'))

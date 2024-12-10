@@ -69,6 +69,7 @@ class LevelResource extends Resource
                         FileUpload::make('video')
                             ->label('Video')
                             ->disk('public')
+                            ->maxSize(102400)
                             ->columnSpanFull(),
                     ])->columns(3),
             ]);

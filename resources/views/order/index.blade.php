@@ -54,7 +54,7 @@
                                         </div>
                                         <p class="fs-12  mb-0">{{ __('mess.order_code') }}: {{ $product->order_code }}</p>
                                         <p class="fs-12  mb-0">{{ __('mess.time') }}: {{ $product->created_at }}</p>
-                                        <p class="fs-12  mb-0">{{ __('mess.balance_after') }}:
+                                        <p class="fs-12  mb-0">{{ __('mess.balance_after') }}:-
                                             <span class="fw-bold text-success">
                                                 ${{ number_format($product->after_balance, 0, ',', '.') }}
                                             </span>
