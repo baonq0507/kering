@@ -47,6 +47,8 @@ class User extends Authenticatable implements FilamentUser, HasName
         'avatar',
         'ip_address',
         'area',
+        'status_mission',
+        'status'
     ];
 
     /**
