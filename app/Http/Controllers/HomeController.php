@@ -209,27 +209,12 @@ class HomeController extends Controller
     public function giaodich(Request $request)
     {
         $type = $request->type;
-        $start_date = $request->start_date;
-        $end_date = $request->end_date;
-
-        if (!$type) {
-            $type = 'deposit';
-        }
-        if ($start_date) {
-            $start_date = Carbon::parse($start_date)->startOfDay();
-        } else {
-            $start_date = Carbon::now()->subMonth()->startOfDay();
-        }
-        if ($end_date) {
-            $end_date = Carbon::parse($end_date)->endOfDay();
-        } else {
-            $end_date = Carbon::now()->endOfDay();
-        }
-
-        if ($start_date > $end_date) {
-            return redirect()->back()->withInput()->with('warning', __('mess.start_date_error'));
-        }
-        $transactions = Transaction::where(['user_id' => auth()->user()->id, 'type' => $type])->whereBetween('created_at', [$start_date, $end_date])->orderByDesc('created_at')->get();
+        $start_date = now()->subDays(6)->startOfDay();
+        $end_date = now()->endOfDay();
+        $transactions = Transaction::where(['user_id' => auth()->user()->id, 'type' => $type])
+            ->whereBetween('created_at', [$start_date, $end_date])
+            ->orderByDesc('created_at')
+            ->get();
         return view('giaodich.index', compact('type', 'transactions', 'start_date', 'end_date'));
     }
 

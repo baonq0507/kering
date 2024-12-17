@@ -9,22 +9,6 @@
         @if(session('warning'))
         <div class="alert alert-warning">{{ session('warning') }}</div>
         @endif
-        <form action="{{ route('giaodich.index', ['type' => $type]) }}" method="get">
-            <input type="hidden" name="type" value="{{ $type }}">
-            <div class="transaction-date">
-                <div class="data-group">
-                    <label for="">{{ __('mess.start_date') }}</label>
-                    <input type="date" name="start_date" id="start_date" value="{{ $start_date }}">
-                </div>
-                <div class="data-group">
-                    <label for="">{{ __('mess.end_date') }}</label>
-                    <input type="date" name="end_date" id="end_date" value="{{ $end_date }}">
-                </div>
-            </div>
-            <div class="text-center mt-3">
-                <button class="btn btn-secondary">{{ __('mess.search') }}</button>
-            </div>
-        </form>
         <div class="group">
             <div class="mt-5">
                 <ul class="nav nav-tabs volatility-tab" id="myTab" role="tablist">
