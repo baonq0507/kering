@@ -95,7 +95,7 @@
         }
     </style>
     <script src="/js/js.js"></script>
-    <script src="/js/snow.mini.js"></script>
+    <!-- <script src="/js/snow.mini.js"></script> -->
 
     @stack('css')
 </head>
